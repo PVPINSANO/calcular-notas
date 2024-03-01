@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_xd"
+
     tools:context=".MainActivity">
 
     <ProgressBar
         android:id="@+id/barra_INSANA"
         style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="17dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,53 +21,119 @@
         android:id="@+id/cr7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PAPI HUMANOIDE"
+        android:text="Calcula la nota :D"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barra_INSANA" />
+
+    <TextView
+        android:id="@+id/showporcentage"
+        android:layout_width="34dp"
+        android:layout_height="26dp"
+        android:text="0%"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cr7"
+        app:layout_constraintHorizontal_bias="0.064"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/barra_INSANA" />
 
     <EditText
-        android:id="@+id/insano"
+        android:id="@+id/nombreXD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:ems="10"
-        android:inputType="number"
+        android:hint="Escriba el nombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cr7" />
 
     <EditText
-        android:id="@+id/waos"
+        android:id="@+id/notaXD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Notas"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/insano" />
+        app:layout_constraintTop_toBottomOf="@id/nombreXD"
+        tools:layout_editor_absoluteY="306dp" />
 
-    <Button
-        android:id="@+id/xd"
+    <EditText
+        android:id="@+id/porcentajeNota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:ems="10"
+        android:hint="Porcentaje"
+        android:inputType="numberSigned"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/waos" />
+        app:layout_constraintTop_toBottomOf="@id/notaXD" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="410dp"
-        android:layout_height="220dp"
-        android:src="@tools:sample/avatars"
+    <Button
+        android:id="@+id/siguiente_nota"
+        android:layout_width="128dp"
+        android:layout_height="50dp"
+        android:text="Agregar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="510dp"
-        tools:srcCompat="@drawable/ic_xd" />
+        app:layout_constraintTop_toBottomOf="@id/porcentajeNota" />
+
+    <Button
+        android:id="@+id/terminar"
+        android:layout_width="116dp"
+        android:layout_height="50dp"
+        android:text="Finalizar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.633"
+        app:layout_constraintStart_toStartOf="@id/siguiente_nota"
+        app:layout_constraintTop_toBottomOf="@id/porcentajeNota" />
+
+    <TextView
+        android:id="@+id/aa"
+        android:layout_width="140dp"
+        android:layout_height="25dp"
+        android:text="Su promedio es"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/siguiente_nota"
+        tools:layout_editor_absoluteX="81dp" />
+
+    <TextView
+        android:id="@+id/promedio"
+        android:layout_width="29dp"
+        android:layout_height="27dp"
+        android:hint="..."
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/aa"
+        app:layout_constraintStart_toStartOf="@id/aa"
+        app:layout_constraintTop_toBottomOf="@id/terminar" />
+
+    <TextView
+        android:id="@+id/bb"
+        android:layout_width="140dp"
+        android:layout_height="25dp"
+        android:text="Su nota final es"
+        android:textSize="17sp"
+        app:layout_constraintTop_toBottomOf="@+id/aa"
+        tools:layout_editor_absoluteX="81dp" />
+
+    <TextView
+        android:id="@+id/notafinal"
+        android:layout_width="29dp"
+        android:layout_height="27dp"
+        android:hint="..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toEndOf="@id/bb"
+        app:layout_constraintTop_toBottomOf="@id/promedio" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

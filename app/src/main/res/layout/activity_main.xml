@@ -91,47 +91,49 @@
         android:layout_height="50dp"
         android:text="Finalizar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.633"
-        app:layout_constraintStart_toStartOf="@id/siguiente_nota"
+        app:layout_constraintHorizontal_bias="0.171"
+        app:layout_constraintStart_toEndOf="@+id/siguiente_nota"
         app:layout_constraintTop_toBottomOf="@id/porcentajeNota" />
 
     <TextView
         android:id="@+id/aa"
         android:layout_width="140dp"
         android:layout_height="25dp"
+        android:layout_marginStart="68dp"
         android:text="Su promedio es"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/siguiente_nota"
-        tools:layout_editor_absoluteX="81dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/siguiente_nota" />
 
     <TextView
         android:id="@+id/promedio"
-        android:layout_width="29dp"
-        android:layout_height="27dp"
+        android:layout_width="50dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="4dp"
         android:hint="..."
-        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/aa"
-        app:layout_constraintStart_toStartOf="@id/aa"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toEndOf="@+id/aa"
         app:layout_constraintTop_toBottomOf="@id/terminar" />
 
     <TextView
         android:id="@+id/bb"
         android:layout_width="140dp"
         android:layout_height="25dp"
+        android:layout_marginStart="68dp"
         android:text="Su nota final es"
-        android:textSize="17sp"
-        app:layout_constraintTop_toBottomOf="@+id/aa"
-        tools:layout_editor_absoluteX="81dp" />
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aa" />
 
     <TextView
         android:id="@+id/notafinal"
-        android:layout_width="29dp"
-        android:layout_height="27dp"
+        android:layout_width="50dp"
+        android:layout_height="23dp"
         android:hint="..."
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
-        app:layout_constraintStart_toEndOf="@id/bb"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toEndOf="@+id/bb"
         app:layout_constraintTop_toBottomOf="@id/promedio" />
 
     <Button
@@ -142,6 +144,40 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bb" />
+
+    <ImageView
+        android:id="@+id/floppa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_xd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Siguiente_estudiante" />
+
+    <Switch
+        android:id="@+id/floppamode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="FloppaMode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Siguiente_estudiante" />
+
+    <TextView
+        android:id="@+id/textfloppa"
+        android:layout_width="240dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:text="FLOPPA MODE ACTIVADO"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/floppamode"
+        app:layout_constraintTop_toBottomOf="@+id/Siguiente_estudiante" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

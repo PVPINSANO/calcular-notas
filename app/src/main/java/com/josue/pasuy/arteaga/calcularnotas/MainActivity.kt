@@ -35,8 +35,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var floppaMode : Switch
 
-  var CR7: String = "CR7 GOAT"
-    var M10 : String = "Frionel pepssi "
+  var CR7: String = "fristiano penaldo CR7 GOAT"
+    var M10 : String = "Frionel pepssi penaltinni M10 GOAT "
 
 
     var porcentajeAcumulado = 0

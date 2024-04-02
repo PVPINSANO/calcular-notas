@@ -35,6 +35,9 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var floppaMode : Switch
 
+  var CR7: String = "CR7 GOAT"
+    var M10 : String = "Frionel pepssi "
+
 
     var porcentajeAcumulado = 0
 
@@ -66,6 +69,12 @@ class MainActivity : AppCompatActivity() {
 
         barritaxd = findViewById<ProgressBar>(R.id.barra_INSANA)
 
+        Cnota.visibility = View.INVISIBLE
+        Fnota.visibility = View.INVISIBLE
+
+       terminarN.visibility = View.INVISIBLE
+        SiguienteEstudiante.visibility = View.INVISIBLE
+
          floppa = findViewById(R.id.floppa)
         floppaMode = findViewById(R.id.floppamode)
        flopatext = findViewById(R.id.textfloppa)
@@ -77,7 +86,7 @@ class MainActivity : AppCompatActivity() {
             if (floppaMode.isChecked){
                flopatext.visibility  = View.VISIBLE
                floppa.visibility = View.VISIBLE
-                flopatext.setText("SAQUEME 5 PROFESOR ")
+                flopatext.setText("CALIFIQUEME 5 PROFESOR XD")
 
         Toast.makeText(this, "Floppa mode activado" ,Toast.LENGTH_SHORT).show()
             }else {
@@ -112,7 +121,7 @@ class MainActivity : AppCompatActivity() {
 
                     SiguienteEstudiante.isEnabled = false
                     SiguienteEstudiante.visibility = View.INVISIBLE
-
+                    terminarN.visibility = View.VISIBLE
 
 
                     nombreX.isEnabled = false
@@ -146,9 +155,10 @@ class MainActivity : AppCompatActivity() {
             resultado.visibility = View.VISIBLE
             SiguienteEstudiante.isEnabled = true
             SiguienteEstudiante.visibility = View.VISIBLE
+            Cnota.visibility = View.VISIBLE
+            Fnota.visibility = View.VISIBLE
 
 
-            //viev visible
         }
 
 
@@ -169,12 +179,19 @@ class MainActivity : AppCompatActivity() {
             porcentajeAcumulado = 0
             resultado.text = ""
             notaFinal.text = ""
-
-
+            Cnota.visibility = View.INVISIBLE
+            Fnota.visibility = View.INVISIBLE
+           terminarN.visibility =  View.INVISIBLE
+            SiguienteEstudiante.visibility = View.INVISIBLE
             listaNotas.clear()
             listaPorcentaje.clear()
-        }
 
+
+
+
+
+
+        }
 
     }
 
@@ -187,19 +204,15 @@ class MainActivity : AppCompatActivity() {
         numeroPorcentaje.text = "$porcentaje%"
         if (porcentaje >= 100 ) {
             terminarN.isEnabled = true
+            SiguienteEstudiante.isEnabled = true
         }else{
             terminarN.isEnabled = false
+            SiguienteEstudiante.isEnabled = false
         }
 
     }
 
-    fun mostrarMensaje(mensaje: String) {
-        Toast.makeText(
-            this,
-            mensaje,
-            Toast.LENGTH_LONG
-        ).show()
-    }
+
 
     fun validarVacio(nombre: String, nota: String, porcentaje: String): Boolean {
         return !nombre.isNullOrEmpty() && !nota.isNullOrEmpty() && !porcentaje.isNullOrEmpty()
@@ -231,7 +244,7 @@ class Estudiante() {
             sumaNotas += n
         }
 
-        return  Math.round(sumaNotas * 100.00) / 100.00  /notas.size
+        return Math.round(sumaNotas / notas.size * 100.00) / 100.00
 
     }
 
